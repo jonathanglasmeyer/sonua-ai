@@ -1,19 +1,302 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Agent Security Starter Kit | Sonua.io</title>
-    <meta name="description" content="5 battle-tested security templates for AI agent operators. Heartbeat Security, Task Risk Gate, Secret Handling, Incident Log, Weekly Review. $19." />
-    <meta property="og:title" content="Agent Security Starter Kit — Sonua.io" />
-    <meta property="og:description" content="5 battle-tested security templates for AI agent operators. Stop hoping nothing goes wrong — start knowing." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://sonua.io" />
-    <script type="module" crossorigin src="/assets/index-S0_wSudL.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-RddZbexq.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonua.ai — AI Agent Services</title>
+    <meta name="description" content="Professional AI Agent services: Setup, Security Review, and Prompt Engineering. Built by agents, supervised by humans.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #0f172a;
+            --accent: #22c55e;
+            --accent-hover: #16a34a;
+            --text: #334155;
+            --text-light: #64748b;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        header {
+            padding: 32px 0;
+            border-bottom: 1px solid var(--border);
+            background: var(--card-bg);
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        main {
+            padding: 64px 0;
+        }
+        
+        h1 {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1.1;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+        
+        .subtitle {
+            font-size: 20px;
+            color: var(--text-light);
+            margin-bottom: 40px;
+        }
+        
+        .tagline {
+            display: inline-block;
+            background: #dcfce7;
+            color: #166534;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 6px 16px;
+            border-radius: 20px;
+            margin-bottom: 24px;
+        }
+        
+        .services {
+            display: grid;
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+        
+        .service {
+            padding: 32px;
+            background: var(--card-bg);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            transition: all 0.2s ease;
+        }
+        
+        .service:hover {
+            border-color: var(--accent);
+            box-shadow: 0 8px 24px rgba(34, 197, 94, 0.1);
+        }
+        
+        .service h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        
+        .service .price {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+        
+        .service p {
+            color: var(--text-light);
+            margin-bottom: 16px;
+        }
+        
+        .service ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .service li {
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+            color: var(--text);
+        }
+        
+        .service li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        .cta {
+            background: var(--primary);
+            color: white;
+            padding: 48px;
+            border-radius: 16px;
+            text-align: center;
+            margin-top: 48px;
+        }
+        
+        .cta h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        
+        .cta p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 24px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 16px 40px;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        
+        .cta-button:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            background: var(--card-bg);
+            margin-top: 64px;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+        
+        .footer-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .made-by {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+        
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 32px;
+            }
+            
+            .service {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="https://sonua.ai" class="logo">Sonua<span>.ai</span></a>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <span class="tagline">AI Agent Services</span>
+            
+            <h1>Your AI Agents, Built Right</h1>
+            <p class="subtitle">Professional services for AI Agent setup, security hardening, and prompt engineering. 5 AI agents + 1 human supervisor. Real results, fast delivery.</p>
+            
+            <div class="services">
+                <div class="service">
+                    <h2>🤖 AI Agent Setup</h2>
+                    <div class="price">From €199</div>
+                    <p>Complete OpenClaw agent deployment with memory, skills, and workflows tailored to your needs.</p>
+                    <ul>
+                        <li>Initial architecture design</li>
+                        <li>Agent configuration & deployment</li>
+                        <li>Memory & knowledge base setup</li>
+                        <li>Custom skill integration</li>
+                        <li>Basic security hardening</li>
+                    </ul>
+                </div>
+                
+                <div class="service">
+                    <h2>🔒 Security Review</h2>
+                    <div class="price">From €149</div>
+                    <p>Comprehensive security audit for your AI agent infrastructure. Find vulnerabilities before they become incidents.</p>
+                    <ul>
+                        <li>Secret handling analysis</li>
+                        <li>Tool permission audit</li>
+                        <li>Heartbeat & monitoring review</li>
+                        <li>Risk assessment report</li>
+                        <li>Actionable fix recommendations</li>
+                    </ul>
+                </div>
+                
+                <div class="service">
+                    <h2>✍️ Prompt Engineering</h2>
+                    <div class="price">From €99</div>
+                    <p>Optimize your agent prompts for better performance, reliability, and output quality.</p>
+                    <ul>
+                        <li>System prompt optimization</li>
+                        <li>Task-specific prompt templates</li>
+                        <li>Error handling improvements</li>
+                        <li>Output format standardization</li>
+                        <li>Best practices documentation</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="cta">
+                <h2>Ready to get started?</h2>
+                <p>Tell us about your project and we'll build a custom solution.</p>
+                <a href="mailto:clawd-lab@agentmail.to?subject=AI%20Agent%20Service%20Inquiry" class="cta-button">Contact Us</a>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="mailto:clawd-lab@agentmail.to">Contact</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            <p class="made-by">
+                Made by AI agents, supervised by a human.<br>
+                <strong>Sonua.ai</strong> — Building the future of agent-native companies.
+            </p>
+        </div>
+    </footer>
+</body>
 </html>
